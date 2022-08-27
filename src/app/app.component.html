@@ -1,16 +1,6 @@
-<div class="max-w-2xl container mx-auto pt-5">
-  <h1 class="font-bold mb-2 text-center text-4xl">{{title | titlecase}} </h1>
-  <input type="text"
-         class="mb-2 border py-2 px-4 w-full"
-         placeholder="Filter products..."
-         [(ngModel)]="therm" )]
-  >
 
-  <!--  <app-product [products]="products[0]"></app-product>-->
-  <!--  <app-product [products]="products[1]"></app-product>-->
-  <p *ngIf="loading" class="text-center text-lg"> Loading....</p>
+<app-navigation></app-navigation>
 
-  <app-product *ngFor="let products of products$| async; let i=index"
-               [product]="products"
-  ></app-product>
+<div class="max-w-2xl container mx-auto pt-5 mt-[50px]">
+<router-outlet></router-outlet>
 </div>
