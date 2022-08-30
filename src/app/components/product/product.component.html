@@ -1,6 +1,6 @@
-<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
+<div class="py-4 px-4 border rounded-2xl flex items-center flex-col mb-2">
   <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2">
-  <h2 class="mb-2 text-lg text-center">{{product.title}}</h2>
+  <h2 class="font-bold mb-2 text-lg text-center">{{product.title}}</h2>
   <p>Price: <span class="font-bold">{{product.price | currency:'GBP'}}</span></p>
 
   <button
@@ -15,8 +15,12 @@
   </button>
 
   <div *ngIf="details">
-    <p>{{product.description}}</p>
+    <p>{{product.description}}</p><br>
+    <p>Category:<span [ngStyle]="{fontWeight:'bold'}">
+      {{product.category}}</span></p>
     <p> Rate:<span [ngStyle]="{fontWeight:'bold'}">
       {{product.rating.rate|number:'1.2-4'}}</span></p>
+    <p> Count: <span [ngStyle]="{fontWeight:'bold'}">
+    {{product.rating.count}}</span></p>
   </div>
 </div>
